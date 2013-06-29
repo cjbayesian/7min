@@ -14,7 +14,7 @@ Usage
 -----
 
     1. Stretch liberally.
-    2. Make sure noone is looking
+    2. Make sure no one is looking
     3. Run ./7min.py
 
 Author
