@@ -3,14 +3,14 @@
 import os
 import time
 import argparse
-from w7min import _get_file
+from . import _get_file
 
 def countdown(sec, activity, tick=True):
 
     for t in reversed(range(sec)):
         print str(t) + " " + activity
         if(tick):
-            dpath = _get_file('histicks.wav')
+            dpath = _get_file('data/histicks.wav')
             os.system(wave_player + ' ' + dpath + ' 2> /dev/null &')
         time.sleep(1)
 
