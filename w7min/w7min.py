@@ -2,14 +2,16 @@
 
 import os
 import time
-
+import argparse
+from w7min import _get_file
 
 def countdown(sec, activity, tick=True):
 
     for t in reversed(range(sec)):
         print str(t) + " " + activity
         if(tick):
-            os.system(wave_player + ' histicks.wav 2> /dev/null &')
+            dpath = _get_file('histicks.wav')
+            os.system(wave_player + ' ' + dpath + ' 2> /dev/null &')
         time.sleep(1)
 
 
@@ -35,17 +37,16 @@ if os.system('which aplay') == 0:
 elif os.system('which afplay') == 0:
     wave_player = 'afplay'
 
-
-###############################################################################
-###############################################################################
-if __name__ == "__main__":
-    import argparse
-
+def main():
     parser = argparse.ArgumentParser(description='The 7 minute Workout')
     parser.add_argument('-t', '--intervaltime',
-                        help='Do each interval for this many seconds',
-                        default=30)
+                         help='Do each interval for this many seconds', default=30)
     parser.add_argument('-r', '--rest', help='rest for this many seconds', default=10)
 
     args = parser.parse_args()
     do_workout(int(args.intervaltime), int(args.rest))
+
+###############################################################################
+###############################################################################
+if __name__ == "__main__":
+    main()
