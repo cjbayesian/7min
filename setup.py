@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 from setuptools import setup, find_packages
 
 pkg = 'w7min'
@@ -15,6 +17,6 @@ setup(name='w7min',
       package_data={pkg: ['data/*']},
       entry_points={'console_scripts':_c_scripts},
       packages=find_packages(),
-      zip_safe=False)
+      )
 
 
