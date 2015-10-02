@@ -9,7 +9,7 @@ _c_scripts = ['w7min=w7min.w7min:main']
 setup(name='w7min',
       version='0.1',
       description='The scientific 7 minute workout',
-      url='http://github.com/storborg/funniest',
+      url='http://github.com/cjbayesian/7min',
       author='Corey Chivers',
       author_email='corey.chivers@mail.mcgill.ca',
       license='MIT',
